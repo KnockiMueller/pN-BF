@@ -9,10 +9,17 @@ def getFileInput(file, nice=False):
 
 def getPf(file):
     numbers = getFileInput(file, True)
+    numbers_new = []
     for i in range(len(numbers)):
-        numbers[i] = int(numbers[i])
+        try:
+            numbers[i] = int(numbers[i])
+            numbers_new.append(numbers[i])
+        except ValueError:
+            continue
 
-    return numbers
+    for i in range(len(numbers_new)):
+        numbers_new[i] = int(numbers_new[i])
+    return numbers_new
 
 
 def getLog():
