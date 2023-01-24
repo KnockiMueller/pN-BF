@@ -3,7 +3,6 @@ import threading
 import time
 from file import *
 
-
 def setup():
     with open('control.txt', 'w') as f:
         f.write('start')
